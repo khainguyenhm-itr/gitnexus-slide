@@ -1208,7 +1208,7 @@ const slides = [
               <span className="text-zinc-700">02 —</span> Ví dụ cấu trúc
             </h3>
             <div className="flex-1 bg-zinc-900/40 border border-zinc-800 rounded-xl p-5 sm:p-8 font-mono text-xs sm:text-sm leading-[2] sm:leading-[2.5] text-zinc-400 flex flex-col justify-center overflow-x-auto custom-scrollbar">
-              <div className="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">byct-system</div>
+              <div className="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">byct-group</div>
               <div className="pl-2 sm:pl-4 whitespace-nowrap">
                 ├── frontend/erp <br />
                 ├── frontend/airp <br />
