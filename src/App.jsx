@@ -152,8 +152,8 @@ const slides = [
         {/* Content */}
         <div className="max-w-2xl relative z-10">
           <p className="text-lg text-zinc-500 border-l-2 border-cyan-500 pl-4">
-            Giúp AI có đầy đủ thông tin và ngữ cảnh để hiểu rõ tình huống, từ đó
-            không trả lời chung chung hay tự bịa chuyện.
+            Giúp AI có đầy đủ thông tin và ngữ cảnh để hiểu rõ tình huống, từ đó không trả lời 
+            một cách chung chung hay tự bịa chuyện.
           </p>
         </div>
       </div>
@@ -187,7 +187,7 @@ const slides = [
             <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-500 flex-shrink-0 mt-0.5 sm:mt-1" />
             <div>
               <h4 className="text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3">
-                Tóm tắt siêu tốc
+                Tóm tắt nhanh chóng
               </h4>
               <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
                 Nắm bắt nhanh nội dung của file dài hàng ngàn dòng code.
@@ -231,7 +231,7 @@ const slides = [
           <p className="text-base sm:text-lg md:text-xl text-zinc-400 font-light flex items-center leading-relaxed">
             <Search className="w-5 h-5 sm:w-6 sm:h-6 mr-3 sm:mr-4 text-zinc-500 flex-shrink-0" /> Khi User hỏi AI:
             <span className="text-white ml-2 sm:ml-3 font-medium tracking-tight">
-              "Sửa đoạn này ảnh hưởng thế nào?"
+              "Sửa đoạn code này ảnh hưởng thế nào?"
             </span>
           </p>
         </div>
@@ -244,7 +244,7 @@ const slides = [
               1
             </div>
             <span className="text-sm sm:text-base font-semibold text-white">
-              Grep Từ Khoá
+              Grep / search
             </span>
           </Card>
           <Card delay="delay-200" className="text-center relative z-10 p-4 sm:p-6">
@@ -259,14 +259,14 @@ const slides = [
             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-zinc-900 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-zinc-400 text-xs sm:text-sm font-mono border border-zinc-800">
               3
             </div>
-            <span className="text-sm sm:text-base font-semibold text-white">Đọc Cục Bộ</span>
+            <span className="text-sm sm:text-base font-semibold text-white">Đọc File</span>
           </Card>
           <Card delay="delay-400" className="text-center relative z-10 bg-rose-500/[0.02] border border-rose-500/20 shadow-[inset_0_0_0_1px_rgba(244,63,94,0.1)] p-4 sm:p-6">
             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-rose-500/10 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4" />
             </div>
             <span className="text-sm sm:text-base font-semibold text-rose-400 uppercase tracking-wider">
-              Suy Đoán
+              Trả Kết quả
             </span>
           </Card>
         </div>
@@ -274,7 +274,7 @@ const slides = [
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
           <div className="flex-1 flex items-start sm:items-center p-4 sm:p-5 md:p-6 bg-white/[0.02] rounded-xl text-zinc-300 border border-white/5 font-light leading-relaxed text-sm sm:text-base">
             <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-500 mr-3 sm:mr-4 mt-0.5 sm:mt-0 flex-shrink-0" /> 
-            <span><strong className="font-medium text-white">Project nhỏ:</strong> Suy đoán thường mang lại kết quả đúng.</span>
+            <span><strong className="font-medium text-white">Project nhỏ:</strong> Thường AI sẽ mang lại kết quả đúng.</span>
           </div>
           <div className="flex-1 flex items-start sm:items-center p-4 sm:p-5 md:p-6 bg-rose-500/[0.02] rounded-xl text-rose-300 border border-rose-500/10 font-light leading-relaxed text-sm sm:text-base">
             <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-rose-500 mr-3 sm:mr-4 mt-0.5 sm:mt-0 flex-shrink-0" /> 
@@ -355,7 +355,7 @@ const slides = [
       <div className="max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
           <Card>
-            <SubHeading>Bề Nổi (Grep Text)</SubHeading>
+            <SubHeading>Thông tin (Grep Text)</SubHeading>
             <SimpleList
               items={[
                 "Chỉ liệt kê danh sách file chứa từ khoá.",
@@ -435,89 +435,41 @@ const slides = [
       </div>
     ),
   },
-  // 7. THE CORE
-  {
-    section: "THE CORE",
-    type: "problem",
-    title: "Bản chất của việc hiểu System",
-    content: () => (
-      <div className="max-w-6xl">
-        <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-6 sm:mb-8 font-light leading-relaxed">
-          Để thấu hiểu toàn diện một codebase, AI cần phải có được các phần sau:
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
-          <Card delay="delay-100" className="flex flex-col items-center text-center p-5 sm:p-6 md:p-8">
-            <Box className="w-8 h-8 sm:w-10 sm:h-10 text-zinc-500 mb-4 sm:mb-5" />
-            <h4 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2 sm:mb-3">
-              Structure
-            </h4>
-            <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Kiến trúc phân tầng và thư mục của dự án.
-            </p>
-          </Card>
-          <Card delay="delay-200" className="flex flex-col items-center text-center p-5 sm:p-6 md:p-8">
-            <Share2 className="w-8 h-8 sm:w-10 sm:h-10 text-zinc-500 mb-4 sm:mb-5" />
-            <h4 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2 sm:mb-3">
-              Relationship
-            </h4>
-            <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Sự ràng buộc và phụ thuộc giữa các module.
-            </p>
-          </Card>
-          <Card delay="delay-300" className="flex flex-col items-center text-center p-5 sm:p-6 md:p-8">
-            <Workflow className="w-8 h-8 sm:w-10 sm:h-10 text-zinc-500 mb-4 sm:mb-5" />
-            <h4 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2 sm:mb-3">
-              Flow
-            </h4>
-            <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Luồng thực thi logic trải dài qua nhiều thành phần.
-            </p>
-          </Card>
-        </div>
-
-        <div className="text-center bg-rose-500/[0.02] border border-rose-500/10 p-5 sm:p-6 md:p-8 rounded-2xl animate-in fade-in duration-700 delay-500">
-          <p className="text-base sm:text-lg md:text-xl text-zinc-300 font-light leading-relaxed">
-            Thực trạng: AI thông thường{" "}
-            <span className="text-rose-400 font-semibold uppercase tracking-[0.1em] mx-1 sm:mx-2 whitespace-nowrap">
-              Thường Xuyên Thiếu Hụt
-            </span>{" "}
-            các luồng dữ liệu hệ thống này.
-          </p>
-        </div>
-      </div>
-    ),
-  },
   // 8. DOCS
   {
     section: "DOCUMENTATION",
     type: "problem",
-    title: "Giới hạn của tài liệu",
+    title: "Giải pháp hiện tại dựa vào Documentation",
     content: () => (
       <div className="max-w-5xl">
+        <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-4 sm:mb-6 font-light leading-relaxed">
+          Hiện tại, phần lớn team mô tả hệ thống thông qua README hoặc thêm
+          codemap được thêm trong từng repo để cung cấp context cho AI.
+        </p>
+
         <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-6 sm:mb-8 font-light leading-relaxed">
-          Nhiều team dùng Tài liệu để cấp context cho AI, nhưng gặp 3 nhược
-          điểm:
+          Tuy nhiên, cách làm này vẫn còn nhiều hạn chế:
         </p>
 
         <Card isWarning={true} className="mb-8 sm:mb-10">
           <SimpleList
             type="warning"
             items={[
-              "Không phản ánh được Execution Flow tại thời gian chạy thực tế.",
-              "Dễ rơi vào tình trạng lỗi thời (outdated) do codebase thay đổi liên tục.",
-              "Thiếu cấu trúc dữ liệu tiêu chuẩn để máy móc tự động hóa việc Trace Impact.",
+              "Không thể hiện đúng luồng chạy thực tế của hệ thống.",
+              "Dễ bị lỗi thời khi code thay đổi giữa các repo.",
+              "Thông tin bị phân tán (mỗi repo một kiểu), khó nhìn tổng thể.",
+              "Không có cấu trúc chuẩn để hệ thống tự động phân tích và truy vết impact.",
             ]}
           />
         </Card>
 
         <div className="p-5 sm:p-6 md:p-10 border border-white/5 bg-white/[0.02] rounded-2xl text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]">
           <span className="text-lg sm:text-xl md:text-2xl font-semibold text-white tracking-tight block mb-3 sm:mb-4">
-            Docs <span className="text-rose-500 mx-2 sm:mx-3 font-light">≠</span> Reality Structure
+            Docs <span className="text-rose-500 mx-2 sm:mx-3 font-light">≠</span> Thực tế hệ thống
           </span>
           <span className="text-sm sm:text-base md:text-lg text-zinc-400 font-light leading-relaxed block">
-            Tài liệu viết tay mang tính tham khảo, khó phản ánh chi tiết thực
-            trạng của Source Code.
+            README và codemap chỉ giúp hiểu tổng quan, nhưng không phản ánh chính xác
+            cách hệ thống đang hoạt động.
           </span>
         </div>
       </div>
@@ -610,7 +562,7 @@ const slides = [
           <Card className="flex items-center justify-center gap-3 sm:gap-4 py-5 sm:py-6 md:py-8">
             <Network className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />{" "}
             <span className="text-base md:text-xl font-semibold text-white tracking-tight">
-              Trace Flow
+              Structure rõ ràng
             </span>
           </Card>
           <Card className="flex items-center justify-center gap-3 sm:gap-4 py-5 sm:py-6 md:py-8">
@@ -622,7 +574,7 @@ const slides = [
           <Card className="flex items-center justify-center gap-3 sm:gap-4 py-5 sm:py-6 md:py-8">
             <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />{" "}
             <span className="text-base md:text-xl font-semibold text-white tracking-tight">
-              System Context
+              Trace Flow
             </span>
           </Card>
         </div>
@@ -697,11 +649,11 @@ const slides = [
   {
     section: "CHALLENGES",
     type: "problem",
-    title: "Rào cản từ ngôn ngữ truy vấn",
+    title: "Khó khăn khi truy vấn dữ liệu Graph",
     content: () => (
       <div className="max-w-6xl">
         <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-6 sm:mb-8 font-light leading-relaxed">
-          Khi hệ thống hình thành, việc truy xuất dữ liệu Graph yêu cầu ngôn ngữ{" "}
+          Khi sử dụng Graph Database, việc truy vấn dữ liệu thường phải dùng ngôn ngữ{" "}
           <span className="font-mono text-white bg-white/10 border border-white/20 px-2 sm:px-3 py-1 rounded-md mx-1 font-semibold text-sm sm:text-base">
             Cypher
           </span>
@@ -712,17 +664,17 @@ const slides = [
           <SimpleList
             type="warning"
             items={[
-              "Learning curve khá cao, khác biệt nhiều so với SQL.",
-              "Câu lệnh Query cho luồng Flow thường mang cấu trúc phức tạp.",
-              "Gặp khó khăn trong quá trình Debug hoặc tinh chỉnh (Trace) kết quả.",
+              "Khó học hơn so với SQL thông thường.",
+              "Câu query cho các luồng xử lý thường khá dài và phức tạp.",
+              "Khó debug và theo dõi kết quả khi cần trace flow hoặc impact.",
             ]}
           />
         </Card>
 
         <div className="p-5 sm:p-6 md:p-8 border-l-4 border-rose-500 bg-rose-500/[0.02] rounded-r-2xl">
           <p className="text-base sm:text-lg md:text-xl text-rose-400 font-medium leading-relaxed">
-            Viết câu lệnh Cypher phức tạp để trace Impact sẽ mất nhiều thời gian
-            và công sức của Developer.
+            Việc viết query để kiểm tra ảnh hưởng (impact) tốn nhiều thời gian và
+            không dễ sử dụng.
           </p>
         </div>
       </div>
@@ -813,15 +765,11 @@ const slides = [
   {
     section: "GITNEXUS",
     type: "solution",
-    title: "Nguyên lý hoạt động của GitNexus",
+    title: "GitNexus là gì?",
     content: () => (
       <div className="max-w-6xl">
         <p className="text-base sm:text-lg md:text-xl text-zinc-300 mb-6 sm:mb-8 font-light tracking-tight leading-relaxed">
-          GitNexus đóng vai trò như một Graph Engine{" "}
-          <span className="text-white font-medium uppercase border-b border-white/30 pb-1">
-            Được Tự Động Hóa Toàn Diện
-          </span>
-          :
+          GitNexus là một hệ thống giúp tự động phân tích code và xây dựng bản đồ hệ thống từ source code:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -830,32 +778,34 @@ const slides = [
               <Search className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-1" />
               <div>
                 <h4 className="text-lg md:text-xl font-semibold text-white mb-2">
-                  Quét Codebase
+                  Quét code
                 </h4>
                 <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-                  Thiết lập luồng tự động quét định kỳ thư mục Repository.
+                  Tự động đọc và cập nhật dữ liệu từ repository.
                 </p>
               </div>
             </Card>
+
             <Card className="flex items-start gap-4 sm:gap-5 p-5 sm:p-6">
               <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-1" />
               <div>
                 <h4 className="text-lg md:text-xl font-semibold text-white mb-2">
-                  Phân Tích Cú Pháp (AST)
+                  Phân tích code
                 </h4>
                 <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-                  Mổ xẻ cấu trúc chuyên sâu của file logic ở tầng syntax.
+                  Phân tích cấu trúc code để hiểu các function và logic bên trong.
                 </p>
               </div>
             </Card>
+
             <Card className="flex items-start gap-4 sm:gap-5 p-5 sm:p-6">
               <Network className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-1" />
               <div>
                 <h4 className="text-lg md:text-xl font-semibold text-white mb-2">
-                  Dựng Bản Đồ Hệ Thống
+                  Tạo bản đồ hệ thống
                 </h4>
                 <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-                  Trích xuất tự động Nodes & Edges thành CSDL Graph ngầm.
+                  Kết nối các thành phần lại thành một graph dễ hiểu.
                 </p>
               </div>
             </Card>
@@ -863,96 +813,24 @@ const slides = [
 
           <Card className="h-full flex flex-col justify-center border-cyan-500/30 bg-cyan-500/[0.02] p-6 sm:p-8 mt-2 md:mt-0">
             <SubHeading color="cyan" className="!mb-6">
-              Trở thành nguồn dữ liệu đáng tin cậy
+              Kết quả mang lại
             </SubHeading>
             <div className="flex flex-col gap-4 sm:gap-6 text-sm sm:text-base md:text-lg text-zinc-300 font-light border-l border-cyan-500/20 pl-4 sm:pl-6 leading-relaxed">
               <span className="flex items-start sm:items-center">
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 text-cyan-500 opacity-50 flex-shrink-0 mt-1 sm:mt-0" />{" "}
-                Lưu vết chi tiết các hàm được trigger từ vị trí nào.
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 text-cyan-500 opacity-50 flex-shrink-0 mt-1 sm:mt-0" />
+                Biết được function nào gọi function nào.
               </span>
               <span className="flex items-start sm:items-center">
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 text-cyan-500 opacity-50 flex-shrink-0 mt-1 sm:mt-0" />{" "}
-                Thống kê rõ ràng mạng lưới Dependency.
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 text-cyan-500 opacity-50 flex-shrink-0 mt-1 sm:mt-0" />
+                Nhìn rõ các dependency trong hệ thống.
               </span>
               <span className="flex items-start sm:items-center">
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 text-cyan-500 opacity-50 flex-shrink-0 mt-1 sm:mt-0" />{" "}
-                Mô hình hóa Flow chạy thực tế toàn hệ thống.
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 text-cyan-500 opacity-50 flex-shrink-0 mt-1 sm:mt-0" />
+                Hiểu được luồng chạy thực tế của toàn hệ thống.
               </span>
             </div>
           </Card>
         </div>
-      </div>
-    ),
-  },
-  // 16. GITNEXUS OUTPUT (FIXED)
-  {
-    section: "GITNEXUS OUTPUT",
-    type: "solution",
-    title: "Cấu trúc dữ liệu đầu ra",
-    content: () => (
-      <div className="max-w-6xl space-y-8">
-        <p className="text-base sm:text-lg md:text-xl text-zinc-400 font-light leading-relaxed">
-          GitNexus không chỉ đọc file rời rạc, mà chuyển codebase thành{" "}
-          <span className="text-white">system graph có thể query</span>.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <Card className="bg-zinc-950 border border-zinc-800 p-6">
-            <SubHeading>1. Nodes (Thực thể)</SubHeading>
-            <div className="space-y-4 text-sm sm:text-base md:text-lg text-zinc-300 font-mono font-light pl-4 sm:pl-6 border-l border-zinc-800 leading-relaxed overflow-x-auto">
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-zinc-600 mr-3 sm:mr-4 font-bold">/</span>
-                Function / Method
-              </div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-zinc-600 mr-3 sm:mr-4 font-bold">/</span>
-                Class / Module
-              </div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-zinc-600 mr-3 sm:mr-4 font-bold">/</span>
-                Service / Component
-              </div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-zinc-600 mr-3 sm:mr-4 font-bold">/</span>
-                File / Repo
-              </div>
-            </div>
-          </Card>
-
-          <Card className="bg-cyan-500/[0.02] border border-cyan-500/10 p-6">
-            <SubHeading color="cyan">2. Edges (Quan hệ)</SubHeading>
-            <div className="space-y-4 text-sm sm:text-base md:text-lg text-zinc-200 font-mono font-light pl-4 sm:pl-6 border-l border-cyan-500/30 leading-relaxed overflow-x-auto">
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-cyan-500 mr-3 sm:mr-4">→</span>
-                CALLS
-              </div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-cyan-500 mr-3 sm:mr-4">→</span>
-                IMPORTS
-              </div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-cyan-500 mr-3 sm:mr-4">→</span>
-                DEFINES / CONTAINS
-              </div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="text-cyan-500 mr-3 sm:mr-4">→</span>
-                DEPENDS_ON
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        <Card className="bg-zinc-950 border border-zinc-800 p-6">
-          <div className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
-            Từ cấu trúc này, GitNexus có thể trả lời các câu hỏi như:
-            <div className="mt-4 space-y-2 text-zinc-400">
-              <div>• Hàm này gọi sang đâu?</div>
-              <div>• Service này phụ thuộc module nào?</div>
-              <div>• Nếu đổi logic ở đây thì repo nào bị ảnh hưởng?</div>
-              <div>• Luồng xử lý thực sự đi qua những node nào?</div>
-            </div>
-          </div>
-        </Card>
       </div>
     ),
   },
@@ -960,43 +838,74 @@ const slides = [
   {
     section: "VALUE PROPOSITION",
     type: "solution",
-    title: "Cung cấp Context chuẩn cho AI",
+    title: "Kết quả khi có GitNexus",
     content: () => (
       <div className="max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          
+          {/* WITHOUT */}
           <Card>
-            <SubHeading>Hiện Tại (Không GitNexus)</SubHeading>
+            <SubHeading>Hiện tại (không có GitNexus)</SubHeading>
             <div className="space-y-3 sm:space-y-4">
-              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start sm:items-center leading-relaxed">
-                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-0.5 sm:mt-0 text-zinc-600 flex-shrink-0" />{" "}
-                AI đối mặt với giới hạn Ngữ cảnh.
+              
+              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start leading-relaxed">
+                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-zinc-600 flex-shrink-0" />
+                AI không có đủ context về hệ thống.
               </div>
-              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start sm:items-center leading-relaxed">
-                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-0.5 sm:mt-0 text-zinc-600 flex-shrink-0" />{" "}
-                Phụ thuộc vào trí nhớ tạm hoặc phỏng đoán.
+
+              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start leading-relaxed">
+                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-zinc-600 flex-shrink-0" />
+                Phải đoán hoặc dựa vào thông tin không đầy đủ.
               </div>
-              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start sm:items-center leading-relaxed">
-                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-0.5 sm:mt-0 text-zinc-600 flex-shrink-0" />{" "}
-                Dễ gây rủi ro khi thay đổi các tính năng hiện có.
+
+              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start leading-relaxed">
+                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-zinc-600 flex-shrink-0" />
+                Dễ trả lời sai hoặc gây lỗi khi thay đổi code.
               </div>
+
+              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start leading-relaxed">
+                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-zinc-600 flex-shrink-0" />
+                Tốn thời gian debug và xác minh lại kết quả.
+              </div>
+
+              <div className="p-4 sm:p-5 bg-white/[0.02] border border-white/5 rounded-xl text-sm sm:text-base text-zinc-400 font-light flex items-start leading-relaxed">
+                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-zinc-600 flex-shrink-0" />
+                Khó scale khi hệ thống lớn và nhiều repo.
+              </div>
+
             </div>
           </Card>
 
+          {/* WITH */}
           <Card className="bg-cyan-500/[0.02] border border-cyan-500/10">
             <SubHeading color="cyan">Với GitNexus</SubHeading>
             <div className="space-y-3 sm:space-y-4">
-              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start sm:items-center shadow-[inset_0_0_0_1px_rgba(34,211,238,0.1)] leading-relaxed">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-0.5 sm:mt-0 text-cyan-400 flex-shrink-0" />{" "}
-                Chuyển hóa Codebase thô thành System Map.
+              
+              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start leading-relaxed">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-cyan-400 flex-shrink-0" />
+                Có thành bản đồ hệ thống rõ ràng.
               </div>
-              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start sm:items-center shadow-[inset_0_0_0_1px_rgba(34,211,238,0.1)] leading-relaxed">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-0.5 sm:mt-0 text-cyan-400 flex-shrink-0" />{" "}
-                Cung cấp nguồn dữ liệu đúng cho AI.
+
+              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start leading-relaxed">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-cyan-400 flex-shrink-0" />
+                AI có dữ liệu đúng để trả lời.
               </div>
-              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start sm:items-center shadow-[inset_0_0_0_1px_rgba(34,211,238,0.1)] leading-relaxed">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-0.5 sm:mt-0 text-cyan-400 flex-shrink-0" />{" "}
-                Kết quả: Có độ tin cậy cao, sát thực tế.
+
+              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start leading-relaxed">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-4 mt-1 text-cyan-400 flex-shrink-0" />
+                Truy vết nhanh impact khi thay đổi code.
               </div>
+
+              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start leading-relaxed">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-cyan-400 flex-shrink-0" />
+                Giảm thời gian debug và kiểm tra thủ công.
+              </div>
+
+              <div className="p-4 sm:p-5 bg-cyan-500/[0.05] border border-cyan-500/20 rounded-xl text-sm sm:text-base text-zinc-100 font-medium flex items-start leading-relaxed">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 mr-3 sm:mr-4 mt-1 text-cyan-400 flex-shrink-0" />
+                Làm việc tốt với hệ thống lớn, nhiều repo.
+              </div>
+
             </div>
           </Card>
         </div>
