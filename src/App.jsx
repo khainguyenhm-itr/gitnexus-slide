@@ -598,11 +598,10 @@ const slides = [
               <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400" />
             </div>
             <h3 className="text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3">
-              Parse toàn bộ Repo
+              Đọc và phân tích toàn bộ code
             </h3>
             <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Đòi hỏi tool phân tích AST (Abstract Syntax Tree) đa ngôn ngữ
-              tương đối phức tạp.
+              Phải đọc hết repo và hiểu từng file, từng function.
             </p>
           </Card>
           <Card delay="delay-200" className="flex flex-col items-start p-5 sm:p-6 md:p-8">
@@ -613,8 +612,7 @@ const slides = [
               Phân tích Logic ngầm
             </h3>
             <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Phân tích để bóc tách chính xác các liên kết, dependency ẩn giữa
-              các component.
+              Xác định function nào gọi function nào, module nào phụ thuộc vào đâu.
             </p>
           </Card>
           <Card delay="delay-300" className="flex flex-col items-start p-5 sm:p-6 md:p-8">
@@ -622,11 +620,10 @@ const slides = [
               <Network className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400" />
             </div>
             <h3 className="text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3">
-              Build Cấu trúc Data
+              Tạo cấu trúc dữ liệu
             </h3>
             <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Chuyển đổi lượng lớn dữ liệu thô vào DB Graph định dạng
-              Nodes/Edges chuẩn.
+              Lưu lại thành graph (nodes và edges) để có thể truy vấn.
             </p>
           </Card>
           <Card delay="delay-400" className="flex flex-col items-start p-5 sm:p-6 md:p-8" isWarning={true}>
@@ -637,8 +634,7 @@ const slides = [
               Maintain Liên Tục
             </h3>
             <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
-              Graph cần liên tục cập nhật theo tiến độ, thời gian và công sức bỏ
-              ra đáng kể.
+              Mỗi khi code thay đổi, graph cũng phải update theo → rất tốn thời gian.
             </p>
           </Card>
         </div>
@@ -1607,6 +1603,47 @@ export default function App() {
     setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
   }, []);
 
+  const handleMouseDown = useCallback(
+    (e) => {
+      if (!isFullscreen) return;
+
+      const target = e.target;
+      if (!(target instanceof Element)) return;
+
+      const interactiveElement = target.closest(
+        "button, a, input, textarea, select, [role='button'], [contenteditable='true']"
+      );
+      if (interactiveElement) return;
+
+      if (e.button === 0) {
+        nextSlide();
+      } else if (e.button === 2) {
+        e.preventDefault();
+        prevSlide();
+      }
+    },
+    [isFullscreen, nextSlide, prevSlide]
+  );
+
+  const handleCopyBlock = useCallback(
+    (e) => {
+      if (!isFullscreen) return;
+      e.preventDefault();
+    },
+    [isFullscreen]
+  );
+
+  const handleKeyDownCapture = useCallback(
+    (e) => {
+      if (!isFullscreen) return;
+
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+      }
+    },
+    [isFullscreen]
+  );
+
   const toggleFullscreen = useCallback(() => {
     if (!document.fullscreenElement) {
       appRef.current?.requestFullscreen?.().catch((err) => console.warn(err));
@@ -1641,7 +1678,14 @@ export default function App() {
   return (
     <div
       ref={appRef}
-      className="min-h-screen bg-[#000000] text-zinc-200 font-sans antialiased overflow-x-hidden flex flex-col relative selection:bg-cyan-500/30 selection:text-white"
+      onMouseDown={handleMouseDown}
+      onCopy={handleCopyBlock}
+      onCut={handleCopyBlock}
+      onKeyDownCapture={handleKeyDownCapture}
+      onContextMenu={isFullscreen ? (e) => e.preventDefault() : undefined}
+      className={`min-h-screen bg-[#000000] text-zinc-200 font-sans antialiased overflow-x-hidden flex flex-col relative selection:bg-cyan-500/30 selection:text-white ${
+        isFullscreen ? "select-none" : ""
+      }`}
     >
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
