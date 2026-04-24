@@ -1303,20 +1303,20 @@ const slides = [
               <div className="text-lg sm:text-xl text-white font-semibold tracking-tight">Ladybug</div>
               <div className="text-zinc-400 font-light space-y-2 sm:space-y-3 leading-relaxed">
                 <div>• Dùng local (dev cá nhân)</div>
-                <div>• Explore / debug graph</div>
-                <div>• Model schema trực quan</div>
-                <div>• Không cần infra</div>
-                <div className="text-rose-400 font-medium mt-1 sm:mt-2">• Không phù hợp shared team</div>
+                <div>• Explore / debug graph trực quan</div>
+                <div>• Phù hợp kiểm tra schema, nodes, edges</div>
+                <div>• Không cần setup server/database phức tạp</div>
+                <div className="text-zinc-300 font-medium mt-1 sm:mt-2">• Vai trò: visualization & debugging</div>
               </div>
             </div>
             <div className="space-y-3 sm:space-y-4 md:pl-8">
               <div className="text-lg sm:text-xl text-cyan-400 font-semibold tracking-tight">FalkorDB</div>
               <div className="text-zinc-400 font-light space-y-2 sm:space-y-3 leading-relaxed">
                 <div>• Graph DB chạy server</div>
-                <div>• Query nhanh, scale lớn</div>
-                <div>• Multi-user / multi-AI</div>
-                <div>• Centralized system context</div>
-                <div className="text-cyan-400 font-medium mt-1 sm:mt-2">• Phù hợp team & production</div>
+                <div>• Lưu graph tập trung cho nhiều repo/service</div>
+                <div>• Multi-user / multi-AI cùng query</div>
+                <div>• Dùng làm shared system context</div>
+                <div className="text-cyan-400 font-medium mt-1 sm:mt-2">• Vai trò: shared graph database</div>
               </div>
             </div>
           </div>
